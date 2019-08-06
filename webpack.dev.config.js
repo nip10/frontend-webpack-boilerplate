@@ -34,7 +34,12 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader", "postcss-loader"]
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+          "postcss-loader"
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
@@ -63,26 +68,16 @@ module.exports = {
   },
   resolve: {
     modules: ["node_modules", path.resolve(__dirname, "src")],
-    extensions: [".js", ".ts"]
+    extensions: [".js"]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
+      inject: true
     }),
     new MiniCssExtractPlugin({
       filename: "style.[chunkhash].css"
     }),
-    new CopyWebpackPlugin([
-      {
-        from: "./src/assets/img",
-        to: "assets/img"
-      }
-    ]),
     new webpack.HotModuleReplacementPlugin()
   ]
 };

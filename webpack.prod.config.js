@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
@@ -27,12 +27,7 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader",
-          "postcss-loader"
-        ]
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader", "postcss-loader"]
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
@@ -81,7 +76,7 @@ module.exports = {
         to: "assets/img"
       }
     ]),
-    new CleanWebpackPlugin(["dist"])
+    new CleanWebpackPlugin()
   ],
   optimization: {
     minimizer: [new UglifyJsPlugin()]

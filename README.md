@@ -1,7 +1,7 @@
 # frontend-webpack-boilerplate
 
 ## Why ?
-One may think this is yet another webpack-based boilerplate for front-end development. However, most of these projects are suited to the developer's way of working. Some don't use Sass, some don't care about loading images or fonts, others have ESLint installed globally, etc. This is my own boilerplate, which includes pretty much everything I use and makes my life easier.
+This is yet another webpack-based boilerplate for front-end development. Most of the existing projects are suited to the developer's way of working. Some don't use Sass, some don't care about loading images or fonts, others have ESLint installed globally, etc. This is my own boilerplate, which includes pretty much everything I use and makes my life easier.
 
 ## How does this work ?
 There are 2 Webpack configs: one for development and one for production. Webpack supports a [Mode flag](https://webpack.js.org/configuration/mode/) which changes the "base" config behind the scenes. This includes optimization and plugins, to name a few.
